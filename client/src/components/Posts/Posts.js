@@ -129,7 +129,7 @@ const Posts = (props) => {
 		let comments;
 
 		let likes = post.likersCount;
-
+		console.log(post.author, props.currentUser);
 		return (
 			<Post key={post.id} className={post.tag + ' post'}>
 				<PostHeader>
@@ -177,10 +177,9 @@ const Posts = (props) => {
 						Commentaires
 					</FaRegComments>
 					{/* Delete Post */}
-					{props.currentUser === post.author ||
-						(props.role === 'admin' && (
-							<DeleteIcon onClick={() => deletePost(post.id)} />
-						))}
+					{(props.currentUser === post.author || props.role === 'admin') && (
+						<DeleteIcon onClick={() => deletePost(post.id)} />
+					)}
 				</PostIconsWrapper>
 
 				<PostContent id={post.id}>{comments}</PostContent>

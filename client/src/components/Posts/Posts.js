@@ -87,7 +87,6 @@ const Posts = (props) => {
 	const loadComments = async (id) => {
 		const response = await fetch(`/posts/${id}/comments`);
 		const data = await response.json();
-
 		return data;
 	};
 

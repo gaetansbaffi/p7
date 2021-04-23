@@ -17,7 +17,7 @@ exports.getPosts = (req, res, next) => {
 			if (err) {
 				console.log(err.message);
 			}
-
+			console.log(results);
 			res.send(results);
 		}
 	);

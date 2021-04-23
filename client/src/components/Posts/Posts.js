@@ -156,9 +156,19 @@ const Posts = (props) => {
 					<FaRegComments
 						onClick={() => {
 							loadComments(post.id).then((data) => {
-								if (!comments) {
+								if (!comments && data.length > 0) {
 									comments = showComments(data);
 
+									ReactDOM.render(
+										comments,
+										document.getElementById(`${post.id}`)
+									);
+								} else if (!comments && data.length === 0) {
+									comments = (
+										<Comment>
+											<CommentContent>Pas de commentaire</CommentContent>
+										</Comment>
+									);
 									ReactDOM.render(
 										comments,
 										document.getElementById(`${post.id}`)

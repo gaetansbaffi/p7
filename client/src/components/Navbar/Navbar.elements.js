@@ -9,6 +9,9 @@ export const Nav = styled.nav`
 	background-color: #4b59f7;
 	width: 100%;
 	height: 80px;
+	@media screen and (max-width: 768px) {
+		height: 120px;
+	}
 `;
 
 export const NavbarContainer = styled.div`
@@ -32,7 +35,7 @@ export const NavLogo = styled(Link)`
 `;
 
 export const Logo = styled.img`
-	width: 50px;
+	width: 60px;
 `;
 
 export const NavMenu = styled.ul`
@@ -42,6 +45,13 @@ export const NavMenu = styled.ul`
 	list-style: none;
 	color: #fff;
 	text-align: center;
+
+	@media screen and (max-width: 768px) {
+		flex-direction: column;
+		font-weight: regular;
+		font-size: 12px;
+		padding: 10px;
+	}
 `;
 
 export const NavItem = styled.li`
@@ -56,8 +66,8 @@ export const NavItem = styled.li`
 	}
 
 	@media screen and (max-width: 768px) {
+		font-weight: regular;
 		font-size: 16px;
-		padding: 2px;
 	}
 `;
 

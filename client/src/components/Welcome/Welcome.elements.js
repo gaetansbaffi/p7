@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
 	margin: 50px auto;
-	width: 60%;
-	max-width: 1024px;
+	width: 100%;
 	height: 500px;
 	display: flex;
 	flex-direction: column;
@@ -11,21 +10,21 @@ export const Section = styled.section`
 `;
 
 export const Header = styled.h2`
-	height: 100px;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: bold;
 	background-color: #4b59f7;
-
 	color: white;
+
 	line-height: 100px;
-	border-top-left-radius: 25px;
-	border-top-right-radius: 25px;
+	@media screen and (max-width: 768px) {
+		font-size: 16px;
+	}
 `;
 
 export const Text = styled.p`
 	font-size: 15px;
 	background-color: white;
-	padding-top: 10px;
+	padding: 10px 10px 0 10px;
 `;
 
 export const ImgWrapper = styled.div`
@@ -47,5 +46,5 @@ export const Img = styled.img`
 	max-width: 100%;
 	vertical-align: middle;
 	display: inline-block;
-	max-height: 250px;
+	max-height: 500px;
 `;

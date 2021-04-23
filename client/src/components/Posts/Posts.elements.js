@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 export const Section = styled.section`
 	margin: auto;
-	width: 90%;
-	max-width: 1024px;
+	width: 100%;
+
 	margin: 20px auto;
 	display: flex;
 	flex-direction: column;
@@ -12,12 +12,13 @@ export const Section = styled.section`
 export const Post = styled.div`
 	overflow: hidden;
 	margin: 20px auto;
-	border-radius: 20px;
+
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	max-width: 1024px;
+
 	min-height: 200px;
+	border: 1px solid black;
 `;
 
 export const PostHeader = styled.h3`
@@ -26,13 +27,19 @@ export const PostHeader = styled.h3`
 	color: white;
 	background-color: #4b59f7;
 	padding: 5px 10px;
-	height: 50px;
+	min-height: 50px;
 	line-height: 50px;
+	@media screen and (max-width: 768px) {
+		font-size: 16px;
+	}
+`;
+
+export const PostTag = styled.span`
+	text-transform: capitalize;
 `;
 
 export const PostContent = styled.p`
 	font-size: 16px;
-
 	background-color: white;
 	padding: 20px;
 `;
@@ -56,7 +63,7 @@ export const PostContentWrapper = styled.div`
 
 export const PostCredentials = styled.p`
 	font-size: 16px;
-	text-align: center;
+
 	background-color: white;
 	padding: 20px;
 `;
@@ -68,7 +75,7 @@ export const PostIconsWrapper = styled.div`
 	flex: 1;
 	background-color: #fff;
 	font-size: 30px;
-	padding: 0 50px;
+
 	svg {
 		min-height: 1em;
 		min-width: 1em;
@@ -77,6 +84,19 @@ export const PostIconsWrapper = styled.div`
 		&:hover {
 			color: #4b59f7;
 			transition: all 0.3s ease;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		width: 50%;
+		margin: auto;
+		font-size: 20px;
+		text-align: center;
+		svg {
+			margin: 0 25px;
+		}
+		span {
+			right: 25px;
 		}
 	}
 `;

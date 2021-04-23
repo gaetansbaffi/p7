@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-
+import Icon from '../../images/icon.svg';
 import {
 	Nav,
 	NavbarContainer,
@@ -8,6 +8,7 @@ import {
 	NavMenu,
 	NavItem,
 	NavLinks,
+	Logo,
 } from './Navbar.elements';
 import { CookiesContext } from '../../utils/cookiesContext';
 
@@ -34,7 +35,10 @@ const Navbar = (props) => {
 		<>
 			<Nav>
 				<NavbarContainer>
-					<NavLogo to="/">Groupomania</NavLogo>
+					<NavLogo to="/">
+						<Logo src={Icon} alt="React Logo" />
+						<h1>Groupomania</h1>
+					</NavLogo>
 					{props.connected ? (
 						<NavMenu>
 							<NavItem>

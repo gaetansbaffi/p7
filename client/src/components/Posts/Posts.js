@@ -15,6 +15,7 @@ import {
 	CommentCredentials,
 	CommentAuthor,
 	LikesCount,
+	PostTag,
 } from './Posts.elements';
 import Tags from '../Tags/Tags';
 import { useEffect, useState } from 'react';
@@ -130,7 +131,7 @@ const Posts = (props) => {
 		return (
 			<Post key={post.id} className={post.tag + ' post'}>
 				<PostHeader>
-					{post.tag} / {post.title}
+					<PostTag>{post.tag}</PostTag> | {post.title}
 				</PostHeader>
 
 				<PostContentWrapper>

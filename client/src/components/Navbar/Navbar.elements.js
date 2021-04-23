@@ -22,10 +22,17 @@ export const NavLogo = styled(Link)`
 	text-decoration: none;
 	color: #fff;
 	font-size: 36px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	@media screen and (max-width: 768px) {
 		font-size: 24px;
 	}
+`;
+
+export const Logo = styled.img`
+	width: 50px;
 `;
 
 export const NavMenu = styled.ul`
@@ -34,20 +41,23 @@ export const NavMenu = styled.ul`
 	align-items: center;
 	list-style: none;
 	color: #fff;
+	text-align: center;
 `;
 
 export const NavItem = styled.li`
 	padding: 5px;
 	cursor: pointer;
-	font-size: 20px;
+	font-size: 16px;
 	transition: all 0.3s ease;
-	padding: 0 10px;
+
+	font-weight: bold;
 	&:hover {
 		color: lightgray;
 	}
 
 	@media screen and (max-width: 768px) {
-		font-size: 15px;
+		font-size: 16px;
+		padding: 2px;
 	}
 `;
 

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 export const Section = styled.section`
 	margin: auto;
 	width: 100%;
-
 	margin: 20px auto;
 	display: flex;
 	flex-direction: column;
@@ -12,13 +11,11 @@ export const Section = styled.section`
 export const Post = styled.div`
 	overflow: hidden;
 	margin: 20px auto;
-
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-
 	min-height: 200px;
-	border: 1px solid black;
+	box-shadow: 3px 4px 9px 6px rgba(75, 89, 247, 0.49);
 `;
 
 export const PostHeader = styled.h3`
@@ -42,6 +39,7 @@ export const PostContent = styled.p`
 	font-size: 16px;
 	background-color: white;
 	padding: 20px;
+	flex: 1;
 `;
 
 export const PostImage = styled.img`
@@ -63,7 +61,6 @@ export const PostContentWrapper = styled.div`
 
 export const PostCredentials = styled.p`
 	font-size: 16px;
-
 	background-color: white;
 	padding: 20px;
 `;
@@ -75,11 +72,11 @@ export const PostIconsWrapper = styled.div`
 	flex: 1;
 	background-color: #fff;
 	font-size: 30px;
-
+	padding: 10px;
 	svg {
 		min-height: 1em;
 		min-width: 1em;
-		margin: 5px 50px;
+		margin: 0 25px;
 		cursor: pointer;
 		&:hover {
 			color: #4b59f7;
@@ -90,7 +87,7 @@ export const PostIconsWrapper = styled.div`
 	@media screen and (max-width: 768px) {
 		width: 50%;
 		margin: auto;
-		font-size: 20px;
+		font-size: 30px;
 		text-align: center;
 		svg {
 			margin: 0 25px;
@@ -114,13 +111,15 @@ export const NavLinks = styled(Link)`
 	}
 `;
 
+export const Comments = styled.div``;
+
 export const Comment = styled.div`
-	border: 1px solid black;
 	margin-bottom: 5px;
 `;
 
 export const CommentCredentials = styled.div`
-	background-color: lightgray;
+	background-color: #4b59f7;
+	color: #fff;
 	padding: 5px;
 `;
 
@@ -138,5 +137,5 @@ export const LikesCount = styled.span`
 	font-size: 16px;
 	font-weight: bolder;
 	position: relative;
-	right: 50px;
+	right: 27px;
 `;

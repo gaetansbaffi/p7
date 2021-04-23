@@ -5,6 +5,7 @@ export const TagsContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 0 auto;
 `;
 export const TagButton = styled.button`
 	background-color: #4b59f7;

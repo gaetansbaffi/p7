@@ -29,8 +29,6 @@ exports.getComments = (req, res, next) => {
 		(err, results) => {
 			if (err) {
 				console.log(err.message);
-			} else {
-				res.send(results);
 			}
 		}
 	);

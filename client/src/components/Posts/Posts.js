@@ -10,6 +10,7 @@ import {
 	PostIconsWrapper,
 	PostImage,
 	NavLinks,
+	Comments,
 	CommentContent,
 	Comment,
 	CommentCredentials,
@@ -180,7 +181,7 @@ const Posts = (props) => {
 					)}
 				</PostIconsWrapper>
 
-				<PostContent id={post.id}>{comments}</PostContent>
+				<Comments id={post.id}>{comments}</Comments>
 			</Post>
 		);
 	});

@@ -17,7 +17,7 @@ exports.getPosts = (req, res, next) => {
 			if (err) {
 				console.log(err.message);
 			}
-			console.log(results);
+
 			res.send(results);
 		}
 	);
@@ -30,7 +30,7 @@ exports.getComments = (req, res, next) => {
 			if (err) {
 				console.log(err.message);
 			} else {
-				console.log(results);
+				res.send(results);
 			}
 		}
 	);
@@ -118,8 +118,6 @@ exports.likePost = (req, res) => {
 		(err, results) => {
 			if (err) {
 				console.log(err.message);
-			} else {
-				console.log(results);
 			}
 		}
 	);
@@ -134,7 +132,11 @@ exports.likePost = (req, res) => {
 				connection.query(
 					`INSERT INTO likes (postid, liker) VALUES (${req.params.id}, ${req.body.user_id})`,
 					(err, results) => {
-						res.send('liked');
+						if (err) {
+							console.log(err.message);
+						} else {
+							res.send(results);
+						}
 					}
 				);
 			}

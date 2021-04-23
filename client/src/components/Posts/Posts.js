@@ -76,7 +76,6 @@ const Posts = (props) => {
 
 		for (const post of posts) {
 			if (!post.className.includes(`${tag} post`, 0)) {
-				console.log(post, post.className);
 				post.style.display = 'none';
 			}
 		}
@@ -107,8 +106,8 @@ const Posts = (props) => {
 	// likes
 
 	const likePost = (id) => {
-		let data = { token: props.token, user_id: props.currentUser };
-		console.log('click');
+		let data = { user_id: props.currentUser };
+
 		fetch(`http://localhost:9000/posts/${id}/likes`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
@@ -116,8 +115,6 @@ const Posts = (props) => {
 		})
 			.then((response) => {
 				loadPosts();
-				response.json();
-				console.log(response);
 			})
 
 			.catch((error) => {
@@ -129,7 +126,7 @@ const Posts = (props) => {
 		let comments;
 
 		let likes = post.likersCount;
-		console.log(post.author, props.currentUser);
+
 		return (
 			<Post key={post.id} className={post.tag + ' post'}>
 				<PostHeader>

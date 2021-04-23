@@ -93,7 +93,7 @@ const Posts = (props) => {
 
 	const showComments = (comments) => {
 		const Comments = comments.map((comment) => (
-			<Comment>
+			<Comment key={comment.id}>
 				<CommentCredentials>
 					<CommentAuthor>{comment.username}</CommentAuthor> le{' '}
 					{comment.date.split('T')[0]}

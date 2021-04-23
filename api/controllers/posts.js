@@ -23,28 +23,6 @@ exports.getPosts = (req, res, next) => {
 	);
 };
 
-exports.getComments = (req, res, next) => {
-	connection.query(
-		`DELETE FROM comments WHERE post NOT IN(SELECT id FROM post WHERE id is not null) `,
-		(err, results) => {
-			if (err) {
-				console.log(err.message);
-			}
-		}
-	);
-	connection.query(
-		`SELECT comments.content,comments.date, users.username 
-	FROM comments 
-	INNER JOIN users ON comments.author = users.id
-	WHERE ${req.params.id} = comments.post
-	
-	 `,
-		(err, results) => {
-			res.send(results);
-		}
-	);
-};
-
 exports.createPost = (req, res, next) => {
 	const { content, token, title, imgUrl, tag } = req.body;
 	const date = Date.now();
@@ -155,6 +133,29 @@ exports.likePost = (req, res) => {
 };
 
 // Comment a post
+
+exports.getComments = (req, res, next) => {
+	connection.query(
+		`DELETE FROM comments WHERE post NOT IN(SELECT id FROM post WHERE id is not null) `,
+		(err, results) => {
+			if (err) {
+				console.log(err.message);
+			}
+		}
+	);
+	connection.query(
+		`SELECT comments.content,comments.date, users.username , comments.id
+	FROM comments 
+	INNER JOIN users ON comments.author = users.id
+	WHERE ${req.params.id} = comments.post
+	
+	 `,
+		(err, results) => {
+			res.send(results);
+		}
+	);
+};
+
 exports.commentPost = (req, res) => {
 	const postId = req.body.id;
 	const token = req.body.token;

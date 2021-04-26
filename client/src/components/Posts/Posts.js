@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
 import {
 	Section,
 	Post,
@@ -10,15 +10,11 @@ import {
 	PostIconsWrapper,
 	PostImage,
 	NavLinks,
-	Comments,
-	CommentContent,
-	Comment,
-	CommentCredentials,
-	CommentAuthor,
 	LikesCount,
 	PostTag,
 } from './Posts.elements';
 import Tags from '../Tags/Tags';
+import Comments from '../Comments/Comments';
 import { useEffect, useState } from 'react';
 import { AiFillDelete as DeleteIcon } from 'react-icons/ai';
 import { BiCommentAdd } from 'react-icons/bi';
@@ -87,23 +83,21 @@ const Posts = (props) => {
 	const loadComments = async (id) => {
 		const response = await fetch(`/posts/${id}/comments`);
 		const data = await response.json();
-		return data;
+		const values = Promise.resolve(data);
+		return values;
 	};
 
-	const showComments = (comments) => {
-		const Comments = comments.map((comment) => (
-			<Comment key={comment.id}>
-				<CommentCredentials>
-					<CommentAuthor>{comment.username}</CommentAuthor> le{' '}
-					{comment.date.split('T')[0]}
-				</CommentCredentials>
-				<CommentContent>{comment.content}</CommentContent>
-			</Comment>
-		));
+	const showComments = (e) => {
+		const parentElement = e.target.parentNode.parentNode.querySelector(
+			'.comments'
+		);
 
-		return Comments;
+		if (parentElement != null) {
+			parentElement.style.display === 'block'
+				? (parentElement.style.display = 'none')
+				: (parentElement.style.display = 'block');
+		}
 	};
-
 	// likes
 
 	const likePost = (id) => {
@@ -124,8 +118,6 @@ const Posts = (props) => {
 	};
 
 	const renderPosts = posts.map((post) => {
-		let comments;
-
 		let likes = post.likersCount;
 
 		return (
@@ -152,36 +144,7 @@ const Posts = (props) => {
 						<BiCommentAdd />
 					</NavLinks>
 					{/* Show comments */}
-					<FaRegComments
-						onClick={() => {
-							loadComments(post.id).then((data) => {
-								if (!comments && data.length > 0) {
-									comments = showComments(data);
-
-									ReactDOM.render(
-										comments,
-										document.getElementById(`${post.id}`)
-									);
-								} else if (!comments && data.length === 0) {
-									comments = (
-										<Comment>
-											<CommentContent>Pas de commentaire</CommentContent>
-										</Comment>
-									);
-									ReactDOM.render(
-										comments,
-										document.getElementById(`${post.id}`)
-									);
-								} else {
-									comments = null;
-									ReactDOM.render(
-										comments,
-										document.getElementById(`${post.id}`)
-									);
-								}
-							});
-						}}
-					>
+					<FaRegComments onClick={(event) => showComments(event)}>
 						Commentaires
 					</FaRegComments>
 					{/* Delete Post */}
@@ -190,7 +153,7 @@ const Posts = (props) => {
 					)}
 				</PostIconsWrapper>
 
-				<Comments id={post.id}>{comments}</Comments>
+				<Comments data={loadComments(post.id)} id={post.id} />
 			</Post>
 		);
 	});
@@ -203,6 +166,7 @@ const Posts = (props) => {
 				clickAll={showAllPosts}
 			></Tags>
 			{renderPosts}
+			<Comments data={loadComments(20)} />
 		</Section>
 	);
 };

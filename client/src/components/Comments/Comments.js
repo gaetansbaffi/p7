@@ -12,19 +12,21 @@ const Comments = ({ id, data }) => {
 	}, []);
 
 	const renderComments =
-		CommentsArr.length > 0
-			? CommentsArr.map((comment) => {
-					return (
-						<Comment
-							key={comment.id}
-							id={comment.id}
-							username={comment.username}
-							date={comment.date}
-							content={comment.content}
-						/>
-					);
-			  })
-			: null;
+		CommentsArr.length > 0 ? (
+			CommentsArr.map((comment) => {
+				return (
+					<Comment
+						key={comment.id}
+						id={comment.id}
+						username={comment.username}
+						date={comment.date}
+						content={comment.content}
+					/>
+				);
+			})
+		) : (
+			<p>Aucun commentaire</p>
+		);
 
 	return <CommentsDiv className="comments">{renderComments}</CommentsDiv>;
 };

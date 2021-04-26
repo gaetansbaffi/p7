@@ -1,4 +1,4 @@
-# p7_final_version
+# p7
 P7 du parcours développeur web 
 
 Pour installer les dépendances : 

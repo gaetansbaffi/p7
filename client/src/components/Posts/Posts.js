@@ -32,7 +32,8 @@ const Posts = (props) => {
 	const loadPosts = async () => {
 		const response = await fetch('/posts');
 		const data = await response.json();
-		setPosts(data);
+
+		setPosts(data.reverse());
 	};
 
 	const deletePost = (id) => {

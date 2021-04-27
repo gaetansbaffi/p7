@@ -54,6 +54,10 @@ export const PostImage = styled.img`
 	max-height: 500px;
 	border-radius: 15px;
 	box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+	@media screen and (max-width: 768px) {
+		max-width: 300px;
+		max-height: 300px;
+	}
 `;
 
 export const PostContentWrapper = styled.div`

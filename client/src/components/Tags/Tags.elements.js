@@ -5,14 +5,14 @@ export const TagsContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0 auto;
+	text-align: center;
 `;
 export const TagButton = styled.button`
 	font-family: 'Arvo', serif;
 	background-color: #3282b8;
 	color: #fff;
 	min-height: 24px;
-	width: 120px;
+	min-width: 120px;
 	margin: 5px 2px;
 	font-size: 15px;
 	font-weight: bold;

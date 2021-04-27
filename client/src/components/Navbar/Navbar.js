@@ -11,6 +11,11 @@ import {
 	Logo,
 } from './Navbar.elements';
 import { CookiesContext } from '../../utils/cookiesContext';
+import { GoHome } from 'react-icons/go';
+import { BiMessageSquareAdd } from 'react-icons/bi';
+import { CgProfile } from 'react-icons/cg';
+import { AiOutlineLock, AiOutlineUnlock } from 'react-icons/ai';
+import { FiUserPlus } from 'react-icons/fi';
 
 const Navbar = (props) => {
 	const { setCookies } = useContext(CookiesContext);
@@ -42,30 +47,43 @@ const Navbar = (props) => {
 					{props.connected ? (
 						<NavMenu>
 							<NavItem>
-								<NavLinks to="/">Accueil</NavLinks>
+								<NavLinks to="/">
+									<GoHome></GoHome>
+								</NavLinks>
 							</NavItem>
 							<NavItem>
-								<NavLinks to="/newpost">Créer un post</NavLinks>
+								<NavLinks to="/newpost">
+									<BiMessageSquareAdd />
+								</NavLinks>
 							</NavItem>
 							<NavItem>
-								<NavLinks to="/profile">Profil</NavLinks>
+								<NavLinks to="/profile">
+									<CgProfile />
+								</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="/" onClick={logout}>
-									Se Déconnecter
+									<AiOutlineLock />
 								</NavLinks>
 							</NavItem>
 						</NavMenu>
 					) : (
 						<NavMenu>
 							<NavItem>
-								<NavLinks to="/">Accueil</NavLinks>
+								<NavLinks to="/">
+									<GoHome></GoHome>
+								</NavLinks>
 							</NavItem>
 							<NavItem>
-								<NavLinks to="/login">Se Connecter</NavLinks>
+								<NavLinks to="/register">
+									<FiUserPlus />
+								</NavLinks>
 							</NavItem>
 							<NavItem>
-								<NavLinks to="/register">S'enregistrer</NavLinks>
+								<NavLinks to="/login">
+									{' '}
+									<AiOutlineUnlock />
+								</NavLinks>
 							</NavItem>
 						</NavMenu>
 					)}

@@ -19,6 +19,8 @@ export const NavbarContainer = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
+
+	margin: 0 auto;
 `;
 
 export const NavLogo = styled(Link)`
@@ -26,11 +28,12 @@ export const NavLogo = styled(Link)`
 	color: #fff;
 	font-size: 36px;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
-
+	width: 70%;
 	@media screen and (max-width: 768px) {
-		font-size: 36px;
+		font-size: 30px;
+		width: 60%;
 	}
 `;
 
@@ -40,18 +43,11 @@ export const Logo = styled.img`
 
 export const NavMenu = styled.ul`
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	list-style: none;
 	color: #fff;
 	text-align: center;
-
-	@media screen and (max-width: 768px) {
-		flex-direction: column;
-		font-weight: regular;
-		font-size: 12px;
-		padding: 10px;
-	}
 `;
 
 export const NavItem = styled.li`
@@ -59,16 +55,13 @@ export const NavItem = styled.li`
 	cursor: pointer;
 	font-size: 20px;
 	transition: all 0.3s ease;
-	letter-spacing: -2px;
 
+	svg {
+		height: 30px;
+		width: 30px;
+	}
 	&:hover {
 		color: #1b262c;
-	}
-
-	@media screen and (max-width: 768px) {
-		font-weight: regular;
-		font-size: 16px;
-		padding: 4px;
 	}
 `;
 

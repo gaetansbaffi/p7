@@ -5,7 +5,7 @@ const Tags = ({ tagsList, click, clickAll }) => {
 	const renderTags = tagsList.map((tag) => {
 		return (
 			<TagButton
-				className={tag.tag}
+				className={tag.tag + ' tag'}
 				key={tag.id}
 				onClick={() => click(tag.tag)}
 			>

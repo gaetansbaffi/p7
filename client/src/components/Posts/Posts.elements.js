@@ -15,19 +15,24 @@ export const Post = styled.div`
 	flex-direction: column;
 	width: 100%;
 	min-height: 200px;
-	box-shadow: 3px 4px 9px 6px rgba(75, 89, 247, 0.49);
+	max-width: 1024px;
+
+	@media screen and (min-width: 1024px) {
+		box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+			0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+	}
 `;
 
 export const PostHeader = styled.h3`
 	font-size: 24px;
-	font-weight: bold;
+
 	color: white;
-	background-color: #4b59f7;
+	background-color: #3282b8;
 	padding: 5px 10px;
 	min-height: 50px;
 	line-height: 50px;
 	@media screen and (max-width: 768px) {
-		font-size: 16px;
+		font-size: 20px;
 	}
 `;
 
@@ -36,7 +41,8 @@ export const PostTag = styled.span`
 `;
 
 export const PostContent = styled.p`
-	font-size: 16px;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
 	background-color: white;
 	padding: 20px;
 	flex: 1;
@@ -63,6 +69,7 @@ export const PostCredentials = styled.p`
 	font-size: 16px;
 	background-color: white;
 	padding: 20px;
+	font-family: 'Lato', sans-serif;
 `;
 
 export const PostIconsWrapper = styled.div`
@@ -70,25 +77,24 @@ export const PostIconsWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex: 1;
-	background-color: #fff;
+	background-color: #0f4c75;
 	font-size: 30px;
 	padding: 10px;
 	svg {
+		color: #bbe1fa;
 		min-height: 1em;
 		min-width: 1em;
 		margin: 0 25px;
 		cursor: pointer;
 		&:hover {
-			color: #4b59f7;
+			color: #3282b8;
 			transition: all 0.3s ease;
 		}
 	}
 
 	@media screen and (max-width: 768px) {
-		width: 50%;
-		margin: auto;
 		font-size: 30px;
-		text-align: center;
+
 		svg {
 			margin: 0 25px;
 		}
@@ -106,7 +112,7 @@ export const NavLinks = styled(Link)`
 
 	height: 100%;
 	&:hover {
-		color: #4b59f7;
+		color: #3282b8;
 		transition: all 0.3s ease;
 	}
 `;
@@ -118,7 +124,7 @@ export const Comment = styled.div`
 `;
 
 export const CommentCredentials = styled.div`
-	background-color: #4b59f7;
+	background-color: #3282b8;
 	color: #fff;
 	padding: 5px;
 `;
@@ -138,4 +144,5 @@ export const LikesCount = styled.span`
 	font-weight: bolder;
 	position: relative;
 	right: 27px;
+	color: #bbe1fa;
 `;

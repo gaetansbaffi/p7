@@ -10,21 +10,25 @@ export const Section = styled.section`
 `;
 
 export const Header = styled.h2`
-	font-size: 20px;
+	font-size: 24px;
 	font-weight: bold;
-	background-color: #4b59f7;
+	background-color: #3282b8;
 	color: white;
 
 	line-height: 100px;
 	@media screen and (max-width: 768px) {
-		font-size: 16px;
+		font-size: 18px;
 	}
 `;
 
 export const Text = styled.p`
-	font-size: 15px;
+	font-size: 20px;
 	background-color: white;
 	padding: 10px 10px 0 10px;
+	font-family: 'Lato', sans-serif;
+	@media screen and (max-width: 768px) {
+		font-size: 14px;
+	}
 `;
 
 export const ImgWrapper = styled.div`

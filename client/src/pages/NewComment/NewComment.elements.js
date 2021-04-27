@@ -4,7 +4,7 @@ export const PostHeader = styled.h3`
 	color: white;
 	font-size: 24px;
 	margin: 0 auto;
-	background-color: #4b59f7;
+	background-color: #3282b8;
 	width: 100%;
 	text-align: center;
 	height: 40px;
@@ -55,6 +55,6 @@ export const InputBtn = styled.input`
 	transition: all 0.5s ease;
 	&:hover {
 		color: #fff;
-		background-color: #4b59f7;
+		background-color: #3282b8;
 	}
 `;

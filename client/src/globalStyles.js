@@ -20,7 +20,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Arvo', serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -29,6 +29,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background:#fff;
 	
 }
 ol, ul {
@@ -45,6 +46,9 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}`;
+}
+
+input{font-family: 'Lato', sans-serif;}
+`;
 
 export default GlobalStyle;

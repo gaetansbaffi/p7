@@ -53,6 +53,7 @@ const Posts = (props) => {
 				console.log(error);
 			});
 	};
+
 	//Tags
 
 	const loadTags = async () => {
@@ -63,19 +64,27 @@ const Posts = (props) => {
 
 	const showAllPosts = () => {
 		let posts = document.getElementsByClassName(`post`);
+		let tags = document.getElementsByClassName(`tag`);
 		loadTags();
 		for (const post of posts) {
 			post.style.display = 'block';
+		}
+		for (const tag of tags) {
+			tag.style.display = 'inline-block';
 		}
 	};
 
 	const showPostsWithTags = (tag) => {
 		let posts = document.getElementsByClassName(`post`);
+		let tags = document.getElementsByClassName(`tag`);
 
 		for (const post of posts) {
 			if (!post.className.includes(`${tag} post`, 0)) {
 				post.style.display = 'none';
 			}
+		}
+		for (const tag of tags) {
+			tag.style.display = 'none';
 		}
 	};
 

@@ -12,7 +12,7 @@ export const ProfileHeader = styled.h4`
 	color: white;
 	font-size: 24px;
 	margin: 0 auto;
-	background-color: #3282b8;
+	background-color: #091f43;
 	width: 100%;
 	text-align: center;
 	height: 40px;

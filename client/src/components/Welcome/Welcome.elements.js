@@ -12,7 +12,7 @@ export const Section = styled.section`
 export const Header = styled.h2`
 	font-size: 24px;
 	font-weight: bold;
-	background-color: #3282b8;
+	background-color: #091f43;
 	color: white;
 
 	line-height: 100px;

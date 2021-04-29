@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Comment from '../Comment/Comment';
 import { CommentsDiv } from './Comments.elements';
+
 const Comments = ({ id, data }) => {
 	const [CommentsArr, setCommentsArr] = useState([]);
 

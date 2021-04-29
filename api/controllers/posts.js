@@ -3,6 +3,8 @@ require('dotenv').config();
 const config = require('../db');
 const connection = config.connection;
 
+//posts
+//get all posts
 exports.getPosts = (req, res, next) => {
 	connection.query(
 		`
@@ -17,12 +19,13 @@ exports.getPosts = (req, res, next) => {
 			if (err) {
 				console.log(err.message);
 			}
-			console.log(results);
+
 			res.send(results);
 		}
 	);
 };
 
+// create a post
 exports.createPost = (req, res, next) => {
 	const { content, token, title, imgUrl, tag } = req.body;
 	const date = Date.now();
@@ -64,6 +67,7 @@ exports.createPost = (req, res, next) => {
 	});
 };
 
+//delete a post
 exports.deletePost = (req, res) => {
 	const postId = req.params.id;
 	const token = req.body.token;
@@ -132,8 +136,8 @@ exports.likePost = (req, res) => {
 	);
 };
 
-// Comment a post
-
+// Comments
+// Get all comments
 exports.getComments = (req, res, next) => {
 	connection.query(
 		`DELETE FROM comments WHERE post NOT IN(SELECT id FROM post WHERE id is not null) `,
@@ -155,7 +159,7 @@ exports.getComments = (req, res, next) => {
 		}
 	);
 };
-
+//comment a post
 exports.commentPost = (req, res) => {
 	const postId = req.body.id;
 	const token = req.body.token;

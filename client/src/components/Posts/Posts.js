@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
 	Section,
 	Post,
@@ -24,6 +23,8 @@ import { AiOutlineLike } from 'react-icons/ai';
 const Posts = (props) => {
 	const [posts, setPosts] = useState([]);
 	const [tags, setTags] = useState([]);
+
+	//loading posts and tags
 	useEffect(() => {
 		loadPosts();
 		loadTags();
@@ -36,6 +37,7 @@ const Posts = (props) => {
 		setPosts(data.reverse());
 	};
 
+	//delete post function
 	const deletePost = (id) => {
 		let data = { token: props.token, user_id: props.currentUser };
 
@@ -62,7 +64,7 @@ const Posts = (props) => {
 		const data = await response.json();
 		setTags(data);
 	};
-
+	//tags logic
 	const showAllPosts = () => {
 		let posts = document.getElementsByClassName(`post`);
 		let tags = document.getElementsByClassName(`tag`);
@@ -108,6 +110,7 @@ const Posts = (props) => {
 				: (parentElement.style.display = 'block');
 		}
 	};
+
 	// likes
 
 	const likePost = (id) => {
@@ -137,7 +140,7 @@ const Posts = (props) => {
 				</PostHeader>
 
 				<PostContentWrapper>
-					{post.img && <PostImage src={post.img}></PostImage>}
+					{post.img && <PostImage alt={post.tag} src={post.img}></PostImage>}
 					<PostContent>{post.content}</PostContent>
 				</PostContentWrapper>
 
@@ -151,6 +154,7 @@ const Posts = (props) => {
 					<LikesCount>{likes}</LikesCount>
 					{/* New comment */}
 					<NavLinks to={'/newcomment/' + post.id}>
+						<p>Comment</p>
 						<BiCommentAdd />
 					</NavLinks>
 					{/* Show comments */}

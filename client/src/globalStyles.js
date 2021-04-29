@@ -47,7 +47,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+label{display:none}
 input{font-family: 'Lato', sans-serif;}
 `;
 

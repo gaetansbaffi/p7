@@ -48,21 +48,25 @@ const Navbar = (props) => {
 						<NavMenu>
 							<NavItem>
 								<NavLinks to="/">
+									<p>Home</p>
 									<GoHome></GoHome>
 								</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="/newpost">
+									<p>newpost</p>
 									<BiMessageSquareAdd />
 								</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="/profile">
+									<p>Profile</p>
 									<CgProfile />
 								</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="/" onClick={logout}>
+									<p>Logout</p>
 									<AiOutlineLock />
 								</NavLinks>
 							</NavItem>
@@ -71,17 +75,20 @@ const Navbar = (props) => {
 						<NavMenu>
 							<NavItem>
 								<NavLinks to="/">
+									<p>Home</p>
 									<GoHome></GoHome>
 								</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="/register">
+									<p>Register</p>
 									<FiUserPlus />
 								</NavLinks>
 							</NavItem>
 							<NavItem>
 								<NavLinks to="/login">
 									{' '}
+									<p>Login</p>
 									<AiOutlineUnlock />
 								</NavLinks>
 							</NavItem>

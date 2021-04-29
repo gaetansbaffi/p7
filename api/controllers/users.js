@@ -8,7 +8,9 @@ const maxAge = 259200;
 exports.createUser = (req, res, next) => {
 	const { username, firstName, lastName, job, email, password } = req.body;
 	const newPass = bcrypt.hashSync(password, 8);
-
+	if (!username || !firstName || !lastName || !job || !email || !password) {
+		return res.json({ message: 'merci de remplir tous les champs' });
+	}
 	connection.query(
 		'INSERT INTO users (username ,firstname, lastname, job, email, password) VALUES (?,?,?,?,?,?)',
 		[username, firstName, lastName, job, email, newPass],
@@ -17,7 +19,7 @@ exports.createUser = (req, res, next) => {
 				res.send(results);
 			} else {
 				console.log(err.code);
-				res.send(err.code);
+				res.json({ message: err.code });
 			}
 		}
 	);
@@ -32,8 +34,9 @@ exports.logout = (req, res) => {
 
 exports.login = (req, res, next) => {
 	const { email, password } = req.body;
+	console.log(req.body);
 	if (!email || !password) {
-		res.send('email ou password manquant');
+		res.json({ message: 'email ou password manquant' });
 	} else {
 		connection.query(
 			'select * from users where email = ? ',
@@ -63,12 +66,12 @@ exports.login = (req, res, next) => {
 						});
 
 						res.status(200).json({ status: 'connecté', token });
+					} else {
+						res.json({
+							status: 'erreur',
+							message: 'Informations de connexion erronées, veuillez réessayer',
+						});
 					}
-				} else {
-					res.status(401).json({
-						status: 'erreur',
-						message: 'Informations de connexion erronées, veuillez réessayer',
-					});
 				}
 			}
 		);

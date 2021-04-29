@@ -36,8 +36,8 @@ const Layout = () => {
 			return null;
 		}
 	};
-	console.log(parseJwt(token));
-	let role = token ? parseJwt(token).role : null;
+
+	let role = token ? parseJwt(token)?.role : null;
 
 	return (
 		<Router>

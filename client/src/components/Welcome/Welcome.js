@@ -13,7 +13,10 @@ const Welcome = () => {
 				profil
 			</Text>
 			<ImgWrapper>
-				<Img src={require('../../images/team.svg').default}></Img>
+				<Img
+					alt="image of a team"
+					src={require('../../images/team.svg').default}
+				></Img>
 			</ImgWrapper>
 		</Section>
 	);

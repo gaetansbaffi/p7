@@ -9,7 +9,7 @@ export const TagsContainer = styled.div`
 `;
 export const TagButton = styled.button`
 	font-family: 'Arvo', serif;
-	background-color: #3282b8;
+	background-color: #091f43;
 	color: #fff;
 	min-height: 24px;
 	min-width: 120px;
@@ -21,6 +21,6 @@ export const TagButton = styled.button`
 	border-radius: 10px;
 	cursor: pointer;
 	&:hover {
-		background-color: #0f4c75;
+		background-color: #d0515a;
 	}
 `;

@@ -27,7 +27,7 @@ export const PostHeader = styled.h3`
 	font-size: 24px;
 
 	color: white;
-	background-color: #3282b8;
+	background-color: #d0515a;
 	padding: 5px 10px;
 	min-height: 50px;
 	line-height: 50px;
@@ -42,7 +42,7 @@ export const PostTag = styled.span`
 
 export const PostContent = styled.p`
 	font-family: 'Lato', sans-serif;
-	font-size: 20px;
+	font-size: 18px;
 	background-color: white;
 	padding: 20px;
 	flex: 1;
@@ -81,17 +81,17 @@ export const PostIconsWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex: 1;
-	background-color: #0f4c75;
+	background-color: #091f43;
 	font-size: 30px;
 	padding: 10px;
 	svg {
-		color: #bbe1fa;
+		color: #fff;
 		min-height: 1em;
 		min-width: 1em;
 		margin: 0 25px;
 		cursor: pointer;
 		&:hover {
-			color: #3282b8;
+			color: #091f43;
 			transition: all 0.3s ease;
 		}
 	}
@@ -116,8 +116,11 @@ export const NavLinks = styled(Link)`
 
 	height: 100%;
 	&:hover {
-		color: #3282b8;
+		color: #091f43;
 		transition: all 0.3s ease;
+	}
+	p {
+		display: none;
 	}
 `;
 
@@ -128,7 +131,7 @@ export const Comment = styled.div`
 `;
 
 export const CommentCredentials = styled.div`
-	background-color: #3282b8;
+	background-color: #091f43;
 	color: #fff;
 	padding: 5px;
 `;

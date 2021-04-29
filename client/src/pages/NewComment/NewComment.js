@@ -41,8 +41,10 @@ const NewComment = ({ token }) => {
 						type="text"
 						placeholder="Message"
 						name="content"
+						id="content"
 						ref={register}
 					/>
+					<label htmlFor="content">content</label>
 
 					<InputBtn type="submit" value="Créer le commentaire" />
 				</FormContainer>

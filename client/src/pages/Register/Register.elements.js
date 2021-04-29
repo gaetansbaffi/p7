@@ -5,7 +5,7 @@ export const RegisterHeader = styled.h3`
 	font-weight: bold;
 	font-size: 24px;
 	margin: 0 auto;
-	background-color: #3282b8;
+	background-color: #091f43;
 	width: 100%;
 	text-align: center;
 	height: 40px;
@@ -46,6 +46,14 @@ export const InputBtn = styled.input`
 	transition: all 0.5s ease;
 	&:hover {
 		color: #fff;
-		background-color: #0f4c75;
+		background-color: #d0515a;
 	}
+`;
+
+export const RegisterAlert = styled.h3`
+	background-color: #ff6666;
+	color: white;
+	text-align: center;
+	margin-top: 5px;
+	padding: 5px;
 `;

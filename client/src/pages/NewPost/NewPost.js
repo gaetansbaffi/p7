@@ -37,20 +37,38 @@ const NewPost = ({ token }) => {
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<FormContainer>
 					<PostHeader>Créer un nouveau post</PostHeader>
-					<Input type="text" placeholder="Tag" name="tag" ref={register} />
-					<Input type="text" placeholder="Titre" name="title" ref={register} />
+					<Input
+						type="text"
+						placeholder="Tag"
+						id="tag"
+						name="tag"
+						ref={register}
+					/>
+					<label htmlFor="tag">tag</label>
+					<Input
+						type="text"
+						placeholder="Titre"
+						id="title"
+						name="title"
+						ref={register}
+					/>
+					<label htmlFor="title">title</label>
 					<Input
 						type="url"
 						placeholder="Url de l'image"
 						name="imgUrl"
+						id="imgUrl"
 						ref={register}
 					/>
+					<label htmlFor="imgUrl">imgUrl</label>
 					<InputContent
 						type="text"
 						placeholder="Message"
 						name="content"
+						id="content"
 						ref={register}
 					/>
+					<label htmlFor="content">content</label>
 
 					<InputBtn type="submit" value="Créer le post" />
 				</FormContainer>

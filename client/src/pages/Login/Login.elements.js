@@ -4,7 +4,7 @@ export const LoginHeader = styled.h3`
 	color: white;
 	font-size: 24px;
 	margin: 0 auto;
-	background-color: #3282b8;
+	background-color: #091f43;
 	font-weight: bold;
 	width: 100%;
 	text-align: center;
@@ -12,6 +12,14 @@ export const LoginHeader = styled.h3`
 	line-height: 40px;
 	border-top-left-radius: 25px;
 	border-top-right-radius: 25px;
+`;
+
+export const LoginAlert = styled.h3`
+	background-color: #ff6666;
+	color: white;
+	text-align: center;
+	margin-top: 5px;
+	padding: 5px;
 `;
 
 export const Form = styled.form`
@@ -47,6 +55,6 @@ export const InputBtn = styled.input`
 	transition: all 0.5s ease;
 	&:hover {
 		color: #fff;
-		background-color: #0f4c75;
+		background-color: #d0515a;
 	}
 `;

@@ -10,7 +10,7 @@ export const CommentDiv = styled.div`
 `;
 
 export const CommentCredentials = styled.div`
-	background-color: #3282b8;
+	background-color: #091f43;
 	color: #fff;
 	padding: 5px;
 `;

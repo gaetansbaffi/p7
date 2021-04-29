@@ -55,6 +55,6 @@ export const InputBtn = styled.input`
 	transition: all 0.5s ease;
 	&:hover {
 		color: #fff;
-		background-color: #091f43;
+		background-color: #d0515a;
 	}
 `;

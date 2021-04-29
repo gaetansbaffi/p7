@@ -91,7 +91,7 @@ export const PostIconsWrapper = styled.div`
 		margin: 0 25px;
 		cursor: pointer;
 		&:hover {
-			color: #091f43;
+			color: #d0515a;
 			transition: all 0.3s ease;
 		}
 	}
@@ -116,7 +116,7 @@ export const NavLinks = styled(Link)`
 
 	height: 100%;
 	&:hover {
-		color: #091f43;
+		color: #d0515a;
 		transition: all 0.3s ease;
 	}
 	p {

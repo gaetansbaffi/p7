@@ -65,7 +65,7 @@ export const NavItem = styled.li`
 		width: 30px;
 	}
 	&:hover {
-		color: #1b262c;
+		color: #d0515a;
 	}
 `;
 
@@ -77,7 +77,7 @@ export const NavLinks = styled(Link)`
 
 	height: 100%;
 	&:hover {
-		color: #1b262c;
+		color: #d0515a;
 		transition: all 0.3s ease;
 	}
 

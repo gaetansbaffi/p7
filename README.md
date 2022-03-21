@@ -33,9 +33,9 @@ CREATE TABLE IF NOT EXISTS post(
     img TEXT NULL,
     content TEXT NOT NULL,
     tag int NOT NULL,
-   date_time DATE DEFAULT CURRENT_TIMESTAMP())
-
-    ;
+   date_time DATE DEFAULT CURRENT_TIMESTAMP()
+   )
+ ;
     
  CREATE TABLE IF NOT EXISTS tags(
      id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,

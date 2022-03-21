@@ -9,7 +9,7 @@ config = {
 	host,
 	user,
 	password,
-	database: 'express-api',
+	database: 'express',
 };
 var connection = mysql.createConnection(config); //added the line
 connection.connect(function (err) {

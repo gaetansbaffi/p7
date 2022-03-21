@@ -11,8 +11,8 @@ cd api > NPM INSTALL puis NPM START.
 
 dans XAMPP > PHPMYADMIN requète SQL : 
 
-CREATE DATABASE IF NOT EXISTS express-api;
-USE express-api;
+CREATE DATABASE IF NOT EXISTS express;
+USE express;
 CREATE TABLE IF NOT EXISTS comments (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     author INT NOT NULL,
